@@ -1,0 +1,32 @@
+language: cpp
+dist: trusty
+os:
+  - linux
+
+compiler:
+  - gcc
+  - clang
+
+#before_install:
+#  - sudo apt-get -qq update
+#  - sudo apt-get install -y build-essential cmake g++ libglm-dev libglew-dev libboost-all-dev freeglut3-dev libsdl2-image-dev libsdl2-dev wget default-jre unzip doxygen graphviz
+
+addons:
+  apt:
+    packages:
+    - cmake
+    - cunit
+
+script:
+  - g++ --version
+  - clang++ --version
+  - cd arduino/surfer/
+  - mkdir build_x86
+  - cd build_x86
+  - cmake ..
+  - make -j2
+  - ./surfer_test
+  - ./surfer_x86
+
+   
+
