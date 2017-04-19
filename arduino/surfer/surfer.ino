@@ -49,11 +49,12 @@ void setup() {
   bat1_s1_parameter->write_channel_id = eBoardChannel_bat1_s1;
  
   adcreadout_initialize(bat1_s1_parameter);
-  // a bit nasty this has to be done here ...
+
   bat1_s1_parameter->float_transform = 1;
   bat1_s1_parameter->float_min = 0.0;
   bat1_s1_parameter->float_max = 3.3 * 2.0; // v with factor 2 splitter
-  
+
+  // ### READ Battery 1 Cell 1
   channel_register_module( adcreadout_execute, bat1_s1_parameter, 1,
     1000000,
     CHANNEL_NO_EXECUTIONPRESCALE );
@@ -64,7 +65,7 @@ void setup() {
   bat1_s1s2_parameter->write_channel_id = eBoardChannel_bat1_s1s2;
  
   adcreadout_initialize(bat1_s1s2_parameter);
-  // a bit nasty this has to be done here ...
+
   bat1_s1s2_parameter->float_transform = 1;
   bat1_s1s2_parameter->float_min = 0.0;
   bat1_s1s2_parameter->float_max = 3.3 * 3.0; // v, with factor 3 splitter
@@ -131,13 +132,15 @@ void setup() {
 }
 
 
-
+/**
+ * Execution loop called by Arduino
+ */
 void loop() {
 
   // read possible serial input
   SerialMessage * first_message = ser_retrieve();
   SerialMessage * next_message = first_message;
-  //printf("loop \n");
+
   while (next_message != 0) {
     //printf("got message \n");
     // to start streaming a channel, send
