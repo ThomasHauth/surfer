@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">acontrol</string>
+
+    <string name="title_section_control">Control</string>
+    <string name="title_section_channels">Channels</string>
+    <string name="title_section_serial_raw">Serial</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
