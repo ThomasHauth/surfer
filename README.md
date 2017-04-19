@@ -15,6 +15,10 @@ cmake ..
 make -j2
 ````
 
+Compile Android Monitoring App
+----
+Download the latest Android Studio [https://developer.android.com/studio/index.html], open the folder `android/acontrol`and click on `Build -> Make Project`.
+
 Compile Arduino Binary
 ----
 Download a recent version of the Arduino IDE:
