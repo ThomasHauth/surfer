@@ -25,3 +25,8 @@ jobs:
         cd build_x86
         cmake ..
         make -j2
+
+    - name: Unit test
+      run: |
+        cd arduino/surfer/build_x86
+        ./surfer_test
