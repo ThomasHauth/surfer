@@ -13,7 +13,8 @@ import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +35,7 @@ import eboard.serial.BTSerial;
  * with one tabs for some high-level control of channel values, one tab for listing all
  * channel values and one tab for raw serial communication log
  */
-public class acontrol extends ActionBarActivity implements ActionBar.TabListener {
+public class acontrol extends AppCompatActivity implements ActionBar.TabListener {
 
     /**
      * Holds a fragment for each of the three tabs
